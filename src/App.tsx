@@ -20,7 +20,7 @@ function App() {
         <Loading />
       ) : (
         <div className="flex justify-center mt-28 ">
-          <Swap className="absolute top-6 right-6 " />
+          {/* <Swap className="absolute top-6 right-6 " /> */}
           <div className="">
             <div className="flex flex-col items-center gap-3  max-w-xl mx-auto mb-8">
               <ImageProfile />
