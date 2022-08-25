@@ -1,11 +1,19 @@
+import { useState } from "react";
+
 type SwapProps = {
-  className: string;
+  className?: string;
+  onClick?: () => void;
 };
 
 export default function Swap({ className }: SwapProps) {
+  const [themes, setThemes] = useState(false);
+
   return (
-    <label className={`swap swap-rotate ${className}`}>
-      <input type="checkbox" />
+    <label
+      className={`swap swap-rotate ${className}`}
+      data-set-theme={themes ? "mytheme" : "light"}
+    >
+      <input type="checkbox" onChange={() => setThemes(!themes)} />
 
       <svg
         className="swap-on fill-current w-7 h-7"

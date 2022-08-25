@@ -5,22 +5,25 @@ import ImageProfile from "./components/ImageProfile";
 import Swap from "./components/Swap";
 import { data } from "../src/data";
 import Loading from "./components/Loading";
+import { themeChange } from "theme-change";
 
 function App() {
   const [loading, setLoading] = useState(true);
-  // const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    themeChange(false);
+  });
 
   setTimeout(() => {
     setLoading(false);
   }, 1200);
-
   return (
     <>
       {loading ? (
         <Loading />
       ) : (
         <div className="flex justify-center mt-28 ">
-          {/* <Swap className="absolute top-6 right-6 " /> */}
+          <Swap className="absolute top-6 right-6 " />
           <div className="">
             <div className="flex flex-col items-center gap-3  max-w-xl mx-auto mb-8">
               <ImageProfile />
@@ -33,6 +36,7 @@ function App() {
               {data.map((item) => {
                 return (
                   <Button
+                    key={item.title}
                     title={item.title}
                     href={item.path}
                     icon={item.icon}
