@@ -11,7 +11,7 @@ export default function Swap({ className }: SwapProps) {
   return (
     <label
       className={`swap swap-rotate ${className}`}
-      data-set-theme={themes ? "mytheme" : "light"}
+      data-set-theme={themes ? "light" : "mytheme"}
     >
       <input type="checkbox" onChange={() => setThemes(!themes)} />
 
