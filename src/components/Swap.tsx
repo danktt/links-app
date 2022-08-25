@@ -7,13 +7,13 @@ type SwapProps = {
 
 export default function Swap({ className }: SwapProps) {
   const [themes, setThemes] = useState(false);
-
+  console.log(themes);
   return (
     <label
       className={`swap swap-rotate ${className}`}
-      data-set-theme={themes ? "light" : "mytheme"}
+      data-set-theme={themes ? "mytheme" : "light"}
     >
-      <input type="checkbox" onChange={() => setThemes(!themes)} />
+      <input type="checkbox" onClick={() => setThemes(!themes)} />
 
       <svg
         className="swap-on fill-current w-7 h-7"
